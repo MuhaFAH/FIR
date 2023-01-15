@@ -202,7 +202,6 @@ def third_screen():
     player.alive = True
     player.dead = False
     player.attack = False
-    boss_is_killed = False
 
     enemies = [
         get_enemy_characteristic(player.level // 2) + [(random.randint(300, 1000), random.randint(200, 400)), player]
@@ -220,7 +219,7 @@ def third_screen():
     for enemy in ENEMY_SPRITES:
         enemy.kill()
 
-    while not player.dead and not boss_is_killed:
+    while (not player.dead) and (ENEMY_SPRITES or enemies):
         player_attack = False
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
