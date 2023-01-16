@@ -1399,24 +1399,36 @@ DIAMOND_SWORD_BTN_IMAGES = [
 HEAL_BUFF_BTN_IMAGES = [
     pygame.image.load(
         'assets/buttons/buff-btn-images/heal-buff-btn-image.png'
+    ).convert_alpha(),
+    pygame.image.load(
+        'assets/buttons/buff-btn-images/heal-buff-not-buy-image.png'
     ).convert_alpha()
 ]
 
 SPEED_BUFF_BTN_IMAGES = [
     pygame.image.load(
         'assets/buttons/buff-btn-images/speed-buff-btn-image.png'
+    ).convert_alpha(),
+    pygame.image.load(
+        'assets/buttons/buff-btn-images/speed-buff-not-buy-image.png'
     ).convert_alpha()
 ]
 
 ARMOR_BUFF_BTN_IMAGES = [
     pygame.image.load(
         'assets/buttons/buff-btn-images/armor-buff-btn-image.png'
+    ).convert_alpha(),
+    pygame.image.load(
+        'assets/buttons/buff-btn-images/armor-buff-not-buy-image.png'
     ).convert_alpha()
 ]
 
 DAMAGE_BUFF_BTN_IMAGES = [
     pygame.image.load(
         'assets/buttons/buff-btn-images/damage-buff-btn-image.png'
+    ).convert_alpha(),
+    pygame.image.load(
+        'assets/buttons/buff-btn-images/damage-buff-not-buy-image.png'
     ).convert_alpha()
 ]
 
@@ -1532,7 +1544,7 @@ SKELETON_IMAGES = [
     SKELETON_STAYING_IMAGES,
     SKELETON_ATTACK_LEFT_IMAGES,
     SKELETON_ATTACK_RIGHT_IMAGES,
-    SKELETON_DIE_IMAGES
+    SKELETON_DIE_IMAGES,
 ]
 
 BOSS_IMAGES = [
@@ -1541,5 +1553,5 @@ BOSS_IMAGES = [
     BOSS_STAYING_IMAGES,
     BOSS_ATTACK_LEFT_IMAGES + BOSS_STAYING_IMAGES * 5,
     BOSS_ATTACK_RIGHT_IMAGES + BOSS_STAYING_IMAGES * 5,
-    BOSS_DIE_IMAGES + [BOSS_DIE_IMAGES[-1]] * 10
+    BOSS_DIE_IMAGES + [BOSS_DIE_IMAGES[-1]] * 10,
 ]

@@ -3,7 +3,7 @@ import pygame
 from coin import Coin
 from player import Player
 from border import Border
-from button import Button, Item, Buff
+from button import Button, Item
 from images import                                                                                                                  \
     START_GAME_BTN_IMAGE,     SHOP_BTN_IMAGE,         ARENA_BTN_IMAGE,         WINDOW,                                              \
     CONTINUE_GAME_BTN_IMAGE,  LEAVE_GAME_BTN_IMAGE,   LEAVE_ARENA_BTN_IMAGE,   SETTINGS_BTN_IMAGE,        BACK_BTN_IMAGE,           \
@@ -48,17 +48,16 @@ rubin_sword_btn = Item(RUBIN_SWORD_BTN_IMAGES,       35,   (1100, 300),  scale=1
 emerald_sword_btn = Item(EMERALD_SWORD_BTN_IMAGES,   50,   (1275, 300),  scale=1.30)
 diamond_sword_btn = Item(DIAMOND_SWORD_BTN_IMAGES,   100,  (1450, 300),  scale=1.30)
 
-armor_buff_btn = Buff(ARMOR_BUFF_BTN_IMAGES,         0,    (800,  700),  scale=1.30)
-heal_buff_btn = Buff(HEAL_BUFF_BTN_IMAGES,           0,    (1000, 700),  scale=1.30)
-speed_buff_btn = Buff(SPEED_BUFF_BTN_IMAGES,         0,    (1200, 700),  scale=1.30)
-damage_buff_btn = Buff(DAMAGE_BUFF_BTN_IMAGES,       0,    (1400, 700),  scale=1.30)
+armor_buff_btn = Item(ARMOR_BUFF_BTN_IMAGES,         15,    (800,  700),  scale=1.30)
+heal_buff_btn = Item(HEAL_BUFF_BTN_IMAGES,           35,    (1000, 700),  scale=1.30)
+speed_buff_btn = Item(SPEED_BUFF_BTN_IMAGES,         50,    (1200, 700),  scale=1.30)
+damage_buff_btn = Item(DAMAGE_BUFF_BTN_IMAGES,       100,    (1400, 700),  scale=1.30)
 
 
 sword_text = FONT.render('ОРУЖИЕ',            True,  (255, 255, 255))
 armor_text = FONT.render('СНАРЯЖЕНИЕ',        True,  (255, 255, 255))
 buff_text = FONT.render('УСИЛИТЕЛИ',          True,  (255, 255, 255))
 shop_text = FONT.render('МАГАЗИН ПРЕДМЕТОВ',  True,  (255, 255, 255))
-arena_text = FONT.render(f'УРОВЕНЬ АРЕНЫ - {player.level}', True,  (255, 255, 255))
 
 pressed_buttons = ['STAY']
 window_top = 0

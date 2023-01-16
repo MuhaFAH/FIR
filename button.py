@@ -27,6 +27,7 @@ class Item(Button):
         self.endurance = 45
         self.purchased = False if self.price else True
         self.selected = False
+        self.in_arena = False
 
     def draw(self):
         self.image = pygame.transform.scale(
@@ -37,7 +38,7 @@ class Item(Button):
             (self.images[1].get_width() * self.scale, self.images[1].get_height() * self.scale)
         )
         WINDOW.blit(self.image, (self.rect.x, self.rect.y))
-        if self.selected:
+        if self.selected and not self.in_arena:
             pygame.draw.rect(WINDOW, 'green', self.rect, 13)
         if not self.purchased and self.rect.x in [60, 450, 840, 1230]:
             pygame.draw.rect(WINDOW, 'red', self.rect, 13)
@@ -46,6 +47,7 @@ class Item(Button):
 
     def equip(self):
         if self.draw():
+            print(self.rect.x, self.rect.y)
             if self.purchased:
                 self.selected = True
                 return True
@@ -59,16 +61,3 @@ class Item(Button):
                 pygame.draw.rect(WINDOW, 'red', self.rect, 13)
         return False
 
-
-class Buff(Item):
-    def __init__(self, images, price, position, scale=1):
-        super().__init__(images, price, position, scale)
-        self.endurance = 45
-        self.purchased = False if self.price else True
-        self.selected = False
-
-    def use(self):
-        if self.draw():
-            if self.purchased:
-                return True
-        return False

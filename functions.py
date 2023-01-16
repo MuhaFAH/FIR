@@ -61,3 +61,14 @@ def get_enemy_characteristic(level, enemy='SKELETON', coefficient=1):
         20 * coefficient,
         images,
     ]
+
+
+def draw_healthbar(player, healthbar, image):
+    WINDOW.blit(image, (10, 825))
+    pygame.draw.rect(WINDOW, 'black', (100, 830, healthbar * 3, 60))
+    if player.hit_points > 100:
+        pygame.draw.rect(WINDOW, 'green', (100, 830, 100 * 3, 60))
+        pygame.draw.rect(WINDOW, 'blue', (100 + 100 * 3, 830, (player.hit_points - 100) * 3, 60))
+    else:
+        pygame.draw.rect(WINDOW, 'green', (100, 830, player.hit_points * 3, 60))
+    pygame.draw.rect(WINDOW, 'white', (100, 830, healthbar * 3, 60), 5)

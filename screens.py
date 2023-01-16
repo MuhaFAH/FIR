@@ -22,47 +22,62 @@ def first_screen():
 
 
 def second_screen():
+    arena_text = PRICE_FONT.render(f'УРОВЕНЬ АРЕНЫ - {player.level}', True, (255, 255, 255))
     while not (index := (arena_btn.draw() or shop_btn.draw())):
         if silver_armor_btn.equip():
             player.armor = SILVER_ARMOR
+            player.hit_points = 125
             for i in ['rubin', 'gold', 'emerald', 'diamond']: eval(f'{i}_armor_btn').selected = False
         if gold_armor_btn.equip():
             player.armor = GOLD_ARMOR
+            player.hit_points = 150
             for i in ['silver', 'rubin', 'emerald', 'diamond']: eval(f'{i}_armor_btn').selected = False
         if rubin_armor_btn.equip():
             player.armor = RUBIN_ARMOR
+            player.hit_points = 175
             for i in ['silver', 'gold', 'emerald', 'diamond']: eval(f'{i}_armor_btn').selected = False
         if emerald_armor_btn.equip():
             player.armor = EMERALD_ARMOR
+            player.hit_points = 200
             for i in ['silver', 'gold', 'rubin', 'diamond']: eval(f'{i}_armor_btn').selected = False
         if diamond_armor_btn.equip():
+            player.hit_points = 225
             player.armor = DIAMOND_ARMOR
             for i in ['silver', 'gold', 'emerald', 'rubin']: eval(f'{i}_armor_btn').selected = False
 
         if silver_sword_btn.equip():
             player.sword = 0
+            player.damage = 10
             for i in ['rubin', 'gold', 'emerald', 'diamond']: eval(f'{i}_sword_btn').selected = False
         if gold_sword_btn.equip():
             player.sword = 1
+            player.damage = 20
             for i in ['silver', 'rubin', 'emerald', 'diamond']: eval(f'{i}_sword_btn').selected = False
         if rubin_sword_btn.equip():
             player.sword = 2
+            player.damage = 35
             for i in ['silver', 'gold', 'emerald', 'diamond']: eval(f'{i}_sword_btn').selected = False
         if emerald_sword_btn.equip():
             player.sword = 3
+            player.damage = 50
             for i in ['silver', 'gold', 'rubin', 'diamond']: eval(f'{i}_sword_btn').selected = False
         if diamond_sword_btn.equip():
             player.sword = 4
+            player.damage = 75
             for i in ['silver', 'gold', 'emerald', 'rubin']: eval(f'{i}_sword_btn').selected = False
-
+        WINDOW.blit(arena_text, (1220, 810))
         if armor_buff_btn.equip():
-            print('УСИЛИТЕЛЬ')
+            player.buff = 'armor'
+            for i in ['damage', 'heal', 'speed']: eval(f'{i}_buff_btn').selected = False
         if heal_buff_btn.equip():
-            print('УСИЛИТЕЛЬ')
+            player.buff = 'heal'
+            for i in ['armor', 'damage', 'speed']: eval(f'{i}_buff_btn').selected = False
         if speed_buff_btn.equip():
-            print('УСИЛИТЕЛЬ')
+            player.buff = 'speed'
+            for i in ['armor', 'heal', 'damage']: eval(f'{i}_buff_btn').selected = False
         if damage_buff_btn.equip():
-            print('УСИЛИТЕЛЬ')
+            player.buff = 'damage'
+            for i in ['armor', 'heal', 'speed']: eval(f'{i}_buff_btn').selected = False
 
         check_closure()
 
@@ -93,8 +108,6 @@ def pause_menu():
         if leave_arena_btn.draw():
             player.dead = True
             return
-        if settings_btn.draw():
-            print('НАСТРОЙКИ')
 
         check_closure()
 
@@ -132,60 +145,53 @@ def shop():
         if gold_armor_btn.buy(player.money):
             gold_armor_btn.purchased = True
             player.money -= gold_armor_btn.price
-            player.armor = GOLD_ARMOR
-            player.hit_points = 150
             coin.update(15)
         if rubin_armor_btn.buy(player.money):
             rubin_armor_btn.purchased = True
             player.money -= rubin_armor_btn.price
-            player.armor = RUBIN_ARMOR
-            player.hit_points = 175
             coin.update(35)
         if emerald_armor_btn.buy(player.money):
             emerald_armor_btn.purchased = True
             player.money -= emerald_armor_btn.price
-            player.armor = EMERALD_ARMOR
-            player.hit_points = 200
             coin.update(50)
         if diamond_armor_btn.buy(player.money):
             diamond_armor_btn.purchased = True
             player.money -= diamond_armor_btn.price
-            player.armor = DIAMOND_ARMOR
-            player.hit_points = 225
             coin.update(100)
 
         if gold_sword_btn.buy(player.money):
             gold_sword_btn.purchased = True
             player.money -= gold_sword_btn.price
-            player.sword = 1
-            player.damage = 20
             coin.update(15)
         if rubin_sword_btn.buy(player.money):
             rubin_sword_btn.purchased = True
             player.money -= rubin_sword_btn.price
-            player.sword = 2
-            player.damage = 35
             coin.update(35)
         if emerald_sword_btn.buy(player.money):
             emerald_sword_btn.purchased = True
             player.money -= emerald_sword_btn.price
-            player.sword = 3
-            player.damage = 50
             coin.update(50)
         if diamond_sword_btn.buy(player.money):
             diamond_sword_btn.purchased = True
             player.money -= diamond_sword_btn.price
-            player.sword = 4
-            player.damage = 75
             coin.update(100)
+
         if armor_buff_btn.buy(player.money):
-            print('УСИЛИТЕЛЬ')
+            armor_buff_btn.purchased = True
+            player.money -= armor_buff_btn.price
+            coin.update(15)
         if heal_buff_btn.buy(player.money):
-            print('УСИЛИТЕЛЬ')
+            heal_buff_btn.purchased = True
+            player.money -= heal_buff_btn.price
+            coin.update(35)
         if speed_buff_btn.buy(player.money):
-            print('УСИЛИТЕЛЬ')
+            speed_buff_btn.purchased = True
+            player.money -= speed_buff_btn.price
+            coin.update(50)
         if damage_buff_btn.buy(player.money):
-            print('УСИЛИТЕЛЬ')
+            damage_buff_btn.purchased = True
+            player.money -= damage_buff_btn.price
+            coin.update(100)
 
         for i in range(4):
             draw(info_text[i], 200 + 390 * i, 400)
@@ -215,15 +221,12 @@ def shop():
 
 
 def third_screen():
-    armor_buff_btn.scale = heal_buff_btn.scale = speed_buff_btn.scale = damage_buff_btn.scale = 0.8
-    armor_buff_btn.rect.x = 1300
-    armor_buff_btn.rect.y = 765
-    heal_buff_btn.rect.x = 1300
-    heal_buff_btn.rect.y = 860
-    speed_buff_btn.rect.x = 1390
-    speed_buff_btn.rect.y = 765
-    damage_buff_btn.rect.x = 1390
-    damage_buff_btn.rect.y = 860
+    armor_buff_btn.scale = heal_buff_btn.scale = speed_buff_btn.scale = damage_buff_btn.scale = 0.80
+    armor_buff_btn.rect.x, armor_buff_btn.rect.y = 1300, 765
+    heal_buff_btn.rect.x, heal_buff_btn.rect.y = 1300, 860
+    speed_buff_btn.rect.x, speed_buff_btn.rect.y = 1390, 765
+    damage_buff_btn.rect.x, damage_buff_btn.rect.y = 1390, 860
+    armor_buff_btn.in_arena = heal_buff_btn.in_arena = speed_buff_btn.in_arena = damage_buff_btn.in_arena = True
     rewind(-1440)
     player.frame = 0
     player.change_size()
@@ -234,13 +237,13 @@ def third_screen():
     player.attack = False
     boss_spawned = boss_dead = False
     healthbar = player.hit_points
-
+    arena_text = FONT.render(f'УРОВЕНЬ АРЕНЫ - {player.level}', True, (255, 255, 255))
     enemies = [
-                  get_enemy_characteristic(player.level // 2) + [(random.randint(300, 1000), random.randint(200, 400)),
-                                                                 player]
-                  for _
-                  in range(player.level // 2 * 3 + 5)
-              ]
+        get_enemy_characteristic(player.level // 2) + [(random.randint(300, 1000), random.randint(200, 400)),
+                                                       player]
+        for _
+        in range(player.level // 2 * 3 + 5)
+    ]
 
     while len(pressed_buttons) > 1:
         pressed_buttons.pop(-1)
@@ -256,16 +259,20 @@ def third_screen():
             if event == pygame.K_ESCAPE:
                 pause_menu()
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_r:
+                if event.key == pygame.K_r and (armor_buff_btn.purchased and armor_buff_btn.selected):
                     if 100 <= player.hit_points < healthbar:
-                        player.hit_points += (player.hit_points + 25) - healthbar if player.hit_points + 25 > healthbar else 25
-                if event.key == pygame.K_y:
-                    player.speed += 1
-                if event.key == pygame.K_u:
-                    player.damage += 15
-                if event.key == pygame.K_t:
+                        player.hit_points += healthbar - player.hit_points if player.hit_points + 25 > healthbar else 25
+                        armor_buff_btn.purchased = armor_buff_btn.selected = False
+                if event.key == pygame.K_y and (speed_buff_btn.purchased and speed_buff_btn.selected):
+                    player.speed *= 1.5
+                    speed_buff_btn.purchased = speed_buff_btn.selected = False
+                if event.key == pygame.K_u and (damage_buff_btn.purchased and damage_buff_btn.selected):
+                    player.damage *= 1.4
+                    damage_buff_btn.purchased = damage_buff_btn.selected = False
+                if event.key == pygame.K_t and (heal_buff_btn.purchased and heal_buff_btn.selected):
                     if player.hit_points < 100:
-                        player.hit_points += (player.hit_points + 35) - 100 if player.hit_points + 35 > 100 else 35
+                        player.hit_points += 100 - player.hit_points if player.hit_points + 35 > 100 else 35
+                        heal_buff_btn.purchased = heal_buff_btn.selected = False
                 pressed_buttons.append(event.key)
             if event.type == pygame.KEYUP and len(pressed_buttons) > 1:
                 pressed_buttons.remove(event.key)
@@ -273,17 +280,15 @@ def third_screen():
                 Enemy(*enemies.pop(0))
             if not (ENEMY_SPRITES or enemies) and not boss_spawned:
                 Enemy(*[get_enemy_characteristic(player.level // 2, 'BOSS', 3) + [
-                      (random.randint(300, 1000), random.randint(200, 400)), player]
-                  for _
-                  in range(1)].pop(0))
+                    (random.randint(300, 1000), random.randint(200, 400)), player]
+                        for _
+                        in range(1)].pop(0))
                 boss_spawned = True
             if boss_spawned:
                 if not ENEMY_SPRITES:
                     boss_dead = True
             if event.type == pygame.MOUSEBUTTONDOWN:
                 player_attack = True
-        if boss_dead:
-            player.level += 1
         if player.hit_points <= 100:
             player.armor = SILVER_ARMOR
         WINDOW.blit(BACKGROUND_IMAGE, (0, -2880))
@@ -291,30 +296,32 @@ def third_screen():
         draw_text('T', (1260, 875))
         draw_text('Y', (1485, 780))
         draw_text('U', (1485, 875))
-        if armor_buff_btn.use():
-            player.hit_points += (player.hit_points + 25) - healthbar if player.hit_points + 25 > healthbar else 25
-        if heal_buff_btn.use():
-            player.hit_points += (player.hit_points + 35) - 100 if player.hit_points + 35 > 100 else 35
-        if speed_buff_btn.use():
-            player.speed += 1
-        if damage_buff_btn.use():
-            player.damage += 10
+        WINDOW.blit(armor_buff_btn.image, (1300, 765))
+        if armor_buff_btn.draw():
+            pass
+        if heal_buff_btn.draw():
+            pass
+        if speed_buff_btn.draw():
+            pass
+        if damage_buff_btn.draw():
+            pass
         WINDOW.blit(arena_text, (35, 10))
-        WINDOW.blit(HEALTHBAR, (10, 825))
-        pygame.draw.rect(WINDOW, 'black', (100, 830, healthbar * 3, 60))
-        if player.hit_points > 100:
-            pygame.draw.rect(WINDOW, 'green', (100, 830, 100 * 3, 60))
-            pygame.draw.rect(WINDOW, 'blue', (100 + 100 * 3, 830, (player.hit_points - 100) * 3, 60))
-        else:
-            pygame.draw.rect(WINDOW, 'green', (100, 830, player.hit_points * 3, 60))
-        pygame.draw.rect(WINDOW, 'white', (100, 830, healthbar * 3, 60), 5)
+        draw_healthbar(player, healthbar, HEALTHBAR)
         PLAYER_SPRITE.draw(WINDOW)
         ENEMY_SPRITES.draw(WINDOW)
-        PLAYER_SPRITE.update(pressed_buttons[-1], player_attack, border)
         ENEMY_SPRITES.update()
+        PLAYER_SPRITE.update(pressed_buttons[-1], player_attack, border)
 
         pygame.display.flip()
         CLOCK.tick(FPS)
+    if boss_dead:
+        player.level += 1
+    armor_buff_btn.scale = heal_buff_btn.scale = speed_buff_btn.scale = damage_buff_btn.scale = 1.30
+    armor_buff_btn.rect.x, armor_buff_btn.rect.y = 735, 635
+    heal_buff_btn.rect.x, heal_buff_btn.rect.y = 935, 635
+    speed_buff_btn.rect.x, speed_buff_btn.rect.y = 1135, 635
+    damage_buff_btn.rect.x, damage_buff_btn.rect.y = 1335, 635
+    armor_buff_btn.in_arena = heal_buff_btn.in_arena = speed_buff_btn.in_arena = damage_buff_btn.in_arena = False
     player.hit_points = 125
     player.change_size(6)
     player.rect.center = (0, 290)
