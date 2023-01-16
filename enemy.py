@@ -70,15 +70,16 @@ class Enemy(pygame.sprite.Sprite):
             self.rect.midbottom = (self.pl_x, self.pl_y)
         else:
             self.move()
-
-        if self.frame == (len(self.animation_list[4]) * 5) - 1:
+        if self.frame == 40 and pygame.sprite.collide_mask(self, self.pl):
             self.pl.hit_points -= self.damage
+        if self.frame == (len(self.animation_list[4]) * 5) - 1:
             self.attacking = False
         return self.animation_list[self.act + 3], 5
 
     def move(self):
-        self.rect = self.rect.move((self.pl_x - self.rect.centerx) // self.move_number, (self.pl_y - self.rect.bottom) // self.move_number)
-        return self.animation_list[self.act], 5
+        if not self.attacking:
+            self.rect = self.rect.move((self.pl_x - self.rect.centerx) // self.move_number, (self.pl_y - self.rect.bottom) // self.move_number)
+            return self.animation_list[self.act], 5
 
     def die(self):
         if self.frame == (len(self.animation_list[5]) * 5) - 1:

@@ -44,6 +44,11 @@ def draw_prices(prices, y):
         x += 390
 
 
+def draw_text(letter, coords):
+    tmp = INFO_FONT.render(letter, True, (255, 255, 255))
+    WINDOW.blit(tmp, coords)
+
+
 def get_enemy_characteristic(level, enemy='SKELETON', coefficient=1):
     images, number = {
         'SKELETON': (SKELETON_IMAGES, 3 * level),

@@ -1503,6 +1503,8 @@ BOSS_DIE_IMAGES = cut_sheet(pygame.image.load(
     'assets/boss-animation/boss-die-sheet.png'
 ).convert_alpha(),   6,   1,    600,   208)
 
+HEALTHBAR = pygame.image.load(
+    'assets/healthbar.png').convert_alpha()
 
 COIN_IMAGES = cut_sheet(pygame.image.load(
     'assets/coin.png'
@@ -1537,7 +1539,7 @@ BOSS_IMAGES = [
     BOSS_MOVE_LEFT_IMAGES,
     BOSS_MOVE_RIGHT_IMAGES,
     BOSS_STAYING_IMAGES,
-    BOSS_ATTACK_LEFT_IMAGES,
-    BOSS_ATTACK_RIGHT_IMAGES,
-    BOSS_DIE_IMAGES
+    BOSS_ATTACK_LEFT_IMAGES + BOSS_STAYING_IMAGES * 5,
+    BOSS_ATTACK_RIGHT_IMAGES + BOSS_STAYING_IMAGES * 5,
+    BOSS_DIE_IMAGES + [BOSS_DIE_IMAGES[-1]] * 10
 ]
