@@ -87,6 +87,7 @@ class Enemy(pygame.sprite.Sprite):
 
     def die(self):
         if self.frame == (len(self.animation_list[5]) * 5) - 1:
+            self.pl.money += 1
             self.kill()
         return self.animation_list[5], 5
 

@@ -47,7 +47,6 @@ class Item(Button):
 
     def equip(self):
         if self.draw():
-            print(self.rect.x, self.rect.y)
             if self.purchased:
                 self.selected = True
                 return True

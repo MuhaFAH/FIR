@@ -256,9 +256,9 @@ def third_screen():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
-            if event == pygame.K_ESCAPE:
-                pause_menu()
             if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    pause_menu()
                 if event.key == pygame.K_r and (armor_buff_btn.purchased and armor_buff_btn.selected):
                     if 100 <= player.hit_points < healthbar:
                         player.hit_points += healthbar - player.hit_points if player.hit_points + 25 > healthbar else 25

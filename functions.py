@@ -1,7 +1,6 @@
 import sys
-import random
 import pygame
-
+import random
 from vars import CLOCK, FPS, INFO_FONT, PRICE_FONT
 from images import WINDOW, BACKGROUND_IMAGE, SKELETON_IMAGES, BOSS_IMAGES
 
