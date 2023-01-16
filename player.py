@@ -60,7 +60,7 @@ class Player(pygame.sprite.Sprite):
             self.frame = 0
             self.alive = False
 
-        if attack and self.alive:
+        if attack and self.alive and not self.attack:
             self.frame = 0
             self.attack = True
 
@@ -87,10 +87,10 @@ class Player(pygame.sprite.Sprite):
             self.dead = True
 
     def make_an_attack(self):
-        opponent = pygame.sprite.spritecollideany(self, ENEMY_SPRITES)
-        if opponent:
+        if self.frame == 11 and (opponent := pygame.sprite.spritecollideany(self, ENEMY_SPRITES)):
+            opponent.taking_hit = True
             opponent.hit_points -= self.damage
-        if self.frame == 42:
+        elif self.frame == 42:
             self.attack = False
 
     def change_image(self, index, now_image, step):
