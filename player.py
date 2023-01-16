@@ -29,7 +29,7 @@ class Player(pygame.sprite.Sprite):
         self.sword = 0
         self.level = 1
         self.armor = armor
-        self.money = 500
+        self.money = 0
 
         self.movement_dict = {
             (pygame.K_LEFT,  False):   (0,  (-self.speed,  0)),
@@ -59,6 +59,8 @@ class Player(pygame.sprite.Sprite):
         if self.hit_points <= 0 and self.alive:
             self.frame = 0
             self.alive = False
+            for enemy in ENEMY_SPRITES:
+                enemy.kill()
 
         if attack and self.alive and not self.attack:
             self.frame = 0

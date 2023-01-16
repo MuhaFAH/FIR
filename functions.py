@@ -1,6 +1,6 @@
 import sys
 import pygame
-import random
+
 from vars import CLOCK, FPS, INFO_FONT, PRICE_FONT
 from images import WINDOW, BACKGROUND_IMAGE, SKELETON_IMAGES, BOSS_IMAGES
 
@@ -43,9 +43,9 @@ def draw_prices(prices, y):
         x += 390
 
 
-def draw_text(letter, coords):
+def draw_text(letter, coordinates):
     tmp = INFO_FONT.render(letter, True, (255, 255, 255))
-    WINDOW.blit(tmp, coords)
+    WINDOW.blit(tmp, coordinates)
 
 
 def get_enemy_characteristic(level, enemy='SKELETON', coefficient=1):
@@ -56,7 +56,7 @@ def get_enemy_characteristic(level, enemy='SKELETON', coefficient=1):
 
     return [
         5 * coefficient + number,
-        10**1 + number,
+        10**coefficient + number,
         20 * coefficient,
         images,
     ]

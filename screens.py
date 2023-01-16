@@ -1,6 +1,4 @@
-import sys
-
-import pygame
+import random
 
 from vars import *
 from coin import COIN_SPRITE
@@ -17,6 +15,7 @@ def first_screen():
     silver_sword_btn.selected = silver_armor_btn.selected = True
     while not start_btn.draw():
         check_closure()
+        save_and_load()
         WINDOW.blit(BACKGROUND_IMAGE, (0, 0))
     rewind(0)
 
@@ -80,6 +79,7 @@ def second_screen():
             for i in ['armor', 'heal', 'speed']: eval(f'{i}_buff_btn').selected = False
 
         check_closure()
+        save_and_load()
 
         WINDOW.blit(BACKGROUND_IMAGE, (0, -1440))
         WINDOW.blit(sword_text, (965, 155))
@@ -110,6 +110,7 @@ def pause_menu():
             return
 
         check_closure()
+        save_and_load()
 
 
 def shop():
@@ -200,6 +201,7 @@ def shop():
             draw_prices(price_text, 189 + 200 * (i % 3))
 
         check_closure()
+        save_and_load()
         WINDOW.blit(BACKGROUND_IMAGE, (0, -1440))
         WINDOW.blit(shop_text, (455, 0))
         WINDOW.blit(coin.text, (830, 65))
@@ -248,16 +250,13 @@ def third_screen():
     while len(pressed_buttons) > 1:
         pressed_buttons.pop(-1)
 
-    for enemy in ENEMY_SPRITES:
-        enemy.kill()
-
     while (not player.dead) and not boss_dead:
         player_attack = False
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_ESCAPE:
+                if event == pygame.K_ESCAPE:
                     pause_menu()
                 if event.key == pygame.K_r and (armor_buff_btn.purchased and armor_buff_btn.selected):
                     if 100 <= player.hit_points < healthbar:

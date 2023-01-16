@@ -1,4 +1,5 @@
 import pygame
+import pickle
 
 from coin import Coin
 from player import Player
@@ -15,6 +16,7 @@ from images import                                                              
 
 FPS = 60
 ARENA_LEVEL = 1
+DATA_DIR = 'data'
 CLOCK = pygame.time.Clock()
 MAKE_NEW_ENEMY_EVENT = pygame.USEREVENT + 1
 
@@ -48,10 +50,10 @@ rubin_sword_btn = Item(RUBIN_SWORD_BTN_IMAGES,       35,   (1100, 300),  scale=1
 emerald_sword_btn = Item(EMERALD_SWORD_BTN_IMAGES,   50,   (1275, 300),  scale=1.30)
 diamond_sword_btn = Item(DIAMOND_SWORD_BTN_IMAGES,   100,  (1450, 300),  scale=1.30)
 
-armor_buff_btn = Item(ARMOR_BUFF_BTN_IMAGES,         15,    (800,  700),  scale=1.30)
-heal_buff_btn = Item(HEAL_BUFF_BTN_IMAGES,           35,    (1000, 700),  scale=1.30)
-speed_buff_btn = Item(SPEED_BUFF_BTN_IMAGES,         50,    (1200, 700),  scale=1.30)
-damage_buff_btn = Item(DAMAGE_BUFF_BTN_IMAGES,       100,    (1400, 700),  scale=1.30)
+armor_buff_btn = Item(ARMOR_BUFF_BTN_IMAGES,         15,   (800,  700),  scale=1.30)
+heal_buff_btn = Item(HEAL_BUFF_BTN_IMAGES,           35,   (1000, 700),  scale=1.30)
+speed_buff_btn = Item(SPEED_BUFF_BTN_IMAGES,         50,   (1200, 700),  scale=1.30)
+damage_buff_btn = Item(DAMAGE_BUFF_BTN_IMAGES,       100,  (1400, 700),  scale=1.30)
 
 
 sword_text = FONT.render('ОРУЖИЕ',            True,  (255, 255, 255))
@@ -67,3 +69,47 @@ pygame.draw.ellipse(BORDER_IMAGE,    pygame.Color(0, 255, 0),  (0, 0, 1450, 650)
 pygame.draw.rect(PLAYER_RECT_IMAGE,  pygame.Color(0, 255, 0),  (0, 0, 150, 111))
 
 pygame.time.set_timer(MAKE_NEW_ENEMY_EVENT, 4000)
+
+
+items = (
+    silver_armor_btn,   silver_sword_btn,
+    gold_armor_btn,     gold_sword_btn,
+    rubin_armor_btn,    rubin_sword_btn,
+    emerald_armor_btn,  emerald_sword_btn,
+    diamond_armor_btn,  diamond_sword_btn,
+    armor_buff_btn,     heal_buff_btn,
+    speed_buff_btn,     damage_buff_btn
+)
+
+
+def save_and_load():
+    for local_event in pygame.event.get():
+        if local_event.type == pygame.KEYDOWN:
+            if local_event.key == pygame.K_z:
+                player.money = 100000
+
+            if local_event.key == pygame.K_s:
+                number = 0
+                for item in items:
+                    with open(f'{DATA_DIR}/save{number}.dat', 'wb') as file:
+                        pickle.dump(item.purchased, file)
+                    number += 1
+                with open(f'{DATA_DIR}/save{number}.dat', 'wb') as file:
+                    pickle.dump(player.money, file)
+                number += 1
+                with open(f'{DATA_DIR}/save{number}.dat', 'wb') as file:
+                    pickle.dump(player.level, file)
+                number += 1
+
+            if local_event.key == pygame.K_l:
+                number = 0
+                for item in items:
+                    with open(f'{DATA_DIR}/save{number}.dat', 'rb') as file:
+                        item.purchased = pickle.load(file)
+                    number += 1
+                with open(f'{DATA_DIR}/save{number}.dat', 'rb') as file:
+                    player.money = pickle.load(file)
+                number += 1
+                with open(f'{DATA_DIR}/save{number}.dat', 'rb') as file:
+                    player.level = pickle.load(file)
+                number += 1
