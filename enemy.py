@@ -21,21 +21,24 @@ class Enemy(pygame.sprite.Sprite):
         self.pl_y = player.rect.y
         self.pl = player
 
+        self.taking_hit = False
         self.attacking = False
         self.act = False
 
-        self.action = 2
-        self.speed = 2
         self.move_number = 0
         self.frame = 0
+        self.action = 2
+        self.speed = 2
 
     def update(self):
-        if pygame.sprite.spritecollideany(self, ENEMY_SPRITES) == self and self.hit_points > 0:
-            action = self.get_action()
-        elif self.hit_points > 0:
-            action = self.stay
-        else:
+        if self.hit_points <= 0:
             action = self.die
+        elif self.taking_hit:
+            action = self.take_hit
+        elif pygame.sprite.spritecollideany(self, ENEMY_SPRITES) == self:
+            action = self.get_action()
+        else:
+            action = self.stay
 
         self.change_image(action == self.action, *action())
         self.action = action
@@ -70,21 +73,26 @@ class Enemy(pygame.sprite.Sprite):
             self.rect.midbottom = (self.pl_x, self.pl_y)
         else:
             self.move()
+
         if self.frame == 40 and pygame.sprite.collide_mask(self, self.pl):
             self.pl.hit_points -= self.damage
-        if self.frame == (len(self.animation_list[4]) * 5) - 1:
+        elif self.frame == (len(self.animation_list[4]) * 5) - 1:
             self.attacking = False
         return self.animation_list[self.act + 3], 5
 
-    def move(self):
-        if not self.attacking:
-            self.rect = self.rect.move((self.pl_x - self.rect.centerx) // self.move_number, (self.pl_y - self.rect.bottom) // self.move_number)
-            return self.animation_list[self.act], 5
+    def take_hit(self):
+        if self.frame == (len(self.animation_list[6]) * 5) - 1:
+            self.taking_hit = False
+        return self.animation_list[self.act + 6], 5
 
     def die(self):
         if self.frame == (len(self.animation_list[5]) * 5) - 1:
             self.kill()
         return self.animation_list[5], 5
+
+    def move(self):
+        self.rect = self.rect.move((self.pl_x - self.rect.centerx) // self.move_number, (self.pl_y - self.rect.bottom) // self.move_number)
+        return self.animation_list[self.act], 5
 
     def stay(self):
         return self.animation_list[2], 5

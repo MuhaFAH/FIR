@@ -1399,36 +1399,24 @@ DIAMOND_SWORD_BTN_IMAGES = [
 HEAL_BUFF_BTN_IMAGES = [
     pygame.image.load(
         'assets/buttons/buff-btn-images/heal-buff-btn-image.png'
-    ).convert_alpha(),
-    pygame.image.load(
-        'assets/buttons/buff-btn-images/heal-buff-not-buy-image.png'
     ).convert_alpha()
 ]
 
 SPEED_BUFF_BTN_IMAGES = [
     pygame.image.load(
         'assets/buttons/buff-btn-images/speed-buff-btn-image.png'
-    ).convert_alpha(),
-    pygame.image.load(
-        'assets/buttons/buff-btn-images/speed-buff-not-buy-image.png'
     ).convert_alpha()
 ]
 
 ARMOR_BUFF_BTN_IMAGES = [
     pygame.image.load(
         'assets/buttons/buff-btn-images/armor-buff-btn-image.png'
-    ).convert_alpha(),
-    pygame.image.load(
-        'assets/buttons/buff-btn-images/armor-buff-not-buy-image.png'
     ).convert_alpha()
 ]
 
 DAMAGE_BUFF_BTN_IMAGES = [
     pygame.image.load(
         'assets/buttons/buff-btn-images/damage-buff-btn-image.png'
-    ).convert_alpha(),
-    pygame.image.load(
-        'assets/buttons/buff-btn-images/damage-buff-not-buy-image.png'
     ).convert_alpha()
 ]
 
@@ -1486,6 +1474,14 @@ SKELETON_ATTACK_RIGHT_IMAGES = cut_sheet(pygame.image.load(
     'assets/skeleton-animation/skeleton-attack-right-sheet.png'
 ).convert_alpha(),   18,   1,    129,  111)
 
+SKELETON_TAKE_HIT_LEFT_IMAGES = cut_sheet(pygame.image.load(
+    'assets/skeleton-animation/skeleton-take-hit-left-sheet.png'
+).convert_alpha(),   8,   1,    90,  96)[::-1]
+
+SKELETON_TAKE_HIT_RIGHT_IMAGES = cut_sheet(pygame.image.load(
+    'assets/skeleton-animation/skeleton-take-hit-right-sheet.png'
+).convert_alpha(),   8,   1,    90,  96)
+
 SKELETON_DIE_IMAGES = cut_sheet(pygame.image.load(
     'assets/skeleton-animation/skeleton-die-sheet.png'
 ).convert_alpha(),   15,   1,    99,   96)
@@ -1511,12 +1507,18 @@ BOSS_ATTACK_RIGHT_IMAGES = cut_sheet(pygame.image.load(
     'assets/boss-animation/boss-attack-right-sheet.png'
 ).convert_alpha(),   6,   1,    600,  208)
 
+BOSS_TAKE_HIT_LEFT_IMAGES = cut_sheet(pygame.image.load(
+    'assets/boss-animation/boss-take-hit-left-sheet.png'
+).convert_alpha(),   4,   1,    600,  208)[::-1]
+
+BOSS_TAKE_HIT_RIGHT_IMAGES = cut_sheet(pygame.image.load(
+    'assets/boss-animation/boss-take-hit-right-sheet.png'
+).convert_alpha(),   4,   1,    600,  208)
+
 BOSS_DIE_IMAGES = cut_sheet(pygame.image.load(
     'assets/boss-animation/boss-die-sheet.png'
 ).convert_alpha(),   6,   1,    600,   208)
 
-HEALTHBAR = pygame.image.load(
-    'assets/healthbar.png').convert_alpha()
 
 COIN_IMAGES = cut_sheet(pygame.image.load(
     'assets/coin.png'
@@ -1545,13 +1547,17 @@ SKELETON_IMAGES = [
     SKELETON_ATTACK_LEFT_IMAGES,
     SKELETON_ATTACK_RIGHT_IMAGES,
     SKELETON_DIE_IMAGES,
+    SKELETON_TAKE_HIT_LEFT_IMAGES,
+    SKELETON_TAKE_HIT_RIGHT_IMAGES
 ]
 
 BOSS_IMAGES = [
     BOSS_MOVE_LEFT_IMAGES,
     BOSS_MOVE_RIGHT_IMAGES,
     BOSS_STAYING_IMAGES,
-    BOSS_ATTACK_LEFT_IMAGES + BOSS_STAYING_IMAGES * 5,
-    BOSS_ATTACK_RIGHT_IMAGES + BOSS_STAYING_IMAGES * 5,
-    BOSS_DIE_IMAGES + [BOSS_DIE_IMAGES[-1]] * 10,
+    BOSS_ATTACK_LEFT_IMAGES,
+    BOSS_ATTACK_RIGHT_IMAGES,
+    BOSS_DIE_IMAGES,
+    BOSS_TAKE_HIT_LEFT_IMAGES,
+    BOSS_TAKE_HIT_RIGHT_IMAGES
 ]
