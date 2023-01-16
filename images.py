@@ -1399,24 +1399,36 @@ DIAMOND_SWORD_BTN_IMAGES = [
 HEAL_BUFF_BTN_IMAGES = [
     pygame.image.load(
         'assets/buttons/buff-btn-images/heal-buff-btn-image.png'
+    ).convert_alpha(),
+    pygame.image.load(
+        'assets/buttons/buff-btn-images/heal-buff-not-buy-image.png'
     ).convert_alpha()
 ]
 
 SPEED_BUFF_BTN_IMAGES = [
     pygame.image.load(
         'assets/buttons/buff-btn-images/speed-buff-btn-image.png'
+    ).convert_alpha(),
+    pygame.image.load(
+        'assets/buttons/buff-btn-images/speed-buff-not-buy-image.png'
     ).convert_alpha()
 ]
 
 ARMOR_BUFF_BTN_IMAGES = [
     pygame.image.load(
         'assets/buttons/buff-btn-images/armor-buff-btn-image.png'
+    ).convert_alpha(),
+    pygame.image.load(
+        'assets/buttons/buff-btn-images/armor-buff-not-buy-image.png'
     ).convert_alpha()
 ]
 
 DAMAGE_BUFF_BTN_IMAGES = [
     pygame.image.load(
         'assets/buttons/buff-btn-images/damage-buff-btn-image.png'
+    ).convert_alpha(),
+    pygame.image.load(
+        'assets/buttons/buff-btn-images/damage-buff-not-buy-image.png'
     ).convert_alpha()
 ]
 
@@ -1453,6 +1465,9 @@ SETTINGS_BTN_IMAGE = pygame.image.load(
     'assets/buttons/settings-btn-image.png'
 ).convert_alpha()
 
+HEALTHBAR = pygame.image.load(
+    'assets/healthbar.png'
+)
 
 SKELETON_STAYING_IMAGES = cut_sheet(pygame.image.load(
     'assets/skeleton-animation/skeleton-staying-sheet.png'
