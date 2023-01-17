@@ -12,6 +12,7 @@ def cut_sheet(sheet, columns, rows, width, height):
 
 
 pygame.init()
+pygame.display.set_caption('Fight IS Right')
 WINDOW = pygame.display.set_mode((1620, 950))
 
 SILVER_ARMOR = (
