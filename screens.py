@@ -119,7 +119,6 @@ def pause_menu():
             return
 
         check_closure()
-        save_and_load()
 
 
 def shop():
