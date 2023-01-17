@@ -57,7 +57,7 @@ def get_enemy_characteristic(level, enemy='SKELETON', coefficient=1):
     return [
         5 * coefficient + number,
         10**coefficient + number,
-        20 * coefficient,
+        30 * coefficient,
         images,
     ]
 

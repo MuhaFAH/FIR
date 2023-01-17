@@ -21,8 +21,8 @@ def first_screen():
 
 
 def second_screen():
-    arena_text = PRICE_FONT.render(f'УРОВЕНЬ АРЕНЫ - {player.level}', True, (255, 255, 255))
     while not (index := (arena_btn.draw() or shop_btn.draw())):
+        arena_text = PRICE_FONT.render(f'УРОВЕНЬ АРЕНЫ - {player.level}', True, (255, 255, 255))
         if silver_armor_btn.equip():
             player.armor = SILVER_ARMOR
             player.hit_points = 125
@@ -64,7 +64,7 @@ def second_screen():
             player.sword = 4
             player.damage = 75
             for i in ['silver', 'gold', 'emerald', 'rubin']: eval(f'{i}_sword_btn').selected = False
-        WINDOW.blit(arena_text, (1220, 810))
+
         if armor_buff_btn.equip():
             player.buff = 'armor'
             for i in ['damage', 'heal', 'speed']: eval(f'{i}_buff_btn').selected = False
@@ -78,6 +78,7 @@ def second_screen():
             player.buff = 'damage'
             for i in ['armor', 'heal', 'speed']: eval(f'{i}_buff_btn').selected = False
 
+        WINDOW.blit(arena_text, (1220, 810))
         check_closure()
         save_and_load()
 
@@ -99,8 +100,7 @@ def second_screen():
 
 def pause_menu():
     while True:
-        WINDOW.blit(PAUSE_MENU_IMAGE, (WINDOW.get_width() / 2 - PAUSE_MENU_IMAGE.get_width() / 2,
-                                       250))
+        WINDOW.blit(PAUSE_MENU_IMAGE, (WINDOW.get_width() / 2 - PAUSE_MENU_IMAGE.get_width() / 2, 250))
         if continue_game_btn.draw():
             return
         if leave_game_btn.draw():
@@ -250,6 +250,9 @@ def third_screen():
     while len(pressed_buttons) > 1:
         pressed_buttons.pop(-1)
 
+    for enemy in ENEMY_SPRITES:
+        enemy.kill()
+
     while (not player.dead) and not boss_dead:
         player_attack = False
         for event in pygame.event.get():
@@ -278,7 +281,7 @@ def third_screen():
             if event.type == MAKE_NEW_ENEMY_EVENT and enemies:
                 Enemy(*enemies.pop(0))
             if not (ENEMY_SPRITES or enemies) and not boss_spawned:
-                Enemy(*[get_enemy_characteristic(player.level // 2, 'BOSS', 3) + [
+                Enemy(*[get_enemy_characteristic(player.level // 2, 'BOSS', 2) + [
                     (random.randint(300, 1000), random.randint(200, 400)), player]
                         for _
                         in range(1)].pop(0))
@@ -296,14 +299,12 @@ def third_screen():
         draw_text('Y', (1485, 780))
         draw_text('U', (1485, 875))
         WINDOW.blit(armor_buff_btn.image, (1300, 765))
-        if armor_buff_btn.draw():
-            pass
-        if heal_buff_btn.draw():
-            pass
-        if speed_buff_btn.draw():
-            pass
-        if damage_buff_btn.draw():
-            pass
+
+        armor_buff_btn.draw()
+        heal_buff_btn.draw()
+        speed_buff_btn.draw()
+        damage_buff_btn.draw()
+
         WINDOW.blit(arena_text, (35, 10))
         draw_healthbar(player, healthbar, HEALTHBAR)
         PLAYER_SPRITE.draw(WINDOW)
