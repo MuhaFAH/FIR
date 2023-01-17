@@ -1,5 +1,7 @@
 import random
 
+import pygame.image
+
 from vars import *
 from coin import COIN_SPRITE
 from enemy import ENEMY_SPRITES, Enemy
@@ -8,7 +10,7 @@ from player import PLAYER_SPRITE
 from functions import *
 from images import \
     SILVER_ARMOR, GOLD_ARMOR, RUBIN_ARMOR, EMERALD_ARMOR, DIAMOND_ARMOR, \
-    BACKGROUND_IMAGE, PAUSE_MENU_IMAGE, HEALTHBAR
+    BACKGROUND_IMAGE, PAUSE_MENU_IMAGE, HEALTHBAR, BOSS_HEALTHBAR
 
 
 def first_screen():
@@ -16,7 +18,7 @@ def first_screen():
     while not start_btn.draw():
         check_closure()
         save_and_load()
-        WINDOW.blit(BACKGROUND_IMAGE, (0, 0))
+        WINDOW.blit(BACKGROUND_IMAGE[player.background], (0, 0))
     rewind(0)
 
 
@@ -81,7 +83,7 @@ def second_screen():
         check_closure()
         save_and_load()
 
-        WINDOW.blit(BACKGROUND_IMAGE, (0, -1440))
+        WINDOW.blit(BACKGROUND_IMAGE[player.background], (0, -1440))
         WINDOW.blit(sword_text, (965, 155))
         WINDOW.blit(armor_text, (885, 359))
         WINDOW.blit(buff_text, (895, 559))
@@ -202,7 +204,7 @@ def shop():
 
         check_closure()
         save_and_load()
-        WINDOW.blit(BACKGROUND_IMAGE, (0, -1440))
+        WINDOW.blit(BACKGROUND_IMAGE[player.background], (0, -1440))
         WINDOW.blit(shop_text, (455, 0))
         WINDOW.blit(coin.text, (830, 65))
 
@@ -239,6 +241,7 @@ def third_screen():
     player.attack = False
     boss_spawned = boss_dead = False
     healthbar = player.hit_points
+    boss_hb = 10**3 + 5 * player.level
     arena_text = FONT.render(f'УРОВЕНЬ АРЕНЫ - {player.level}', True, (255, 255, 255))
     enemies = [
         get_enemy_characteristic(player.level // 2) + [(random.randint(300, 1000), random.randint(200, 400)),
@@ -256,7 +259,7 @@ def third_screen():
             if event.type == pygame.QUIT:
                 sys.exit()
             if event.type == pygame.KEYDOWN:
-                if event == pygame.K_ESCAPE:
+                if event.key == pygame.K_ESCAPE:
                     pause_menu()
                 if event.key == pygame.K_r and (armor_buff_btn.purchased and armor_buff_btn.selected):
                     if 100 <= player.hit_points < healthbar:
@@ -290,7 +293,7 @@ def third_screen():
                 player_attack = True
         if player.hit_points <= 100:
             player.armor = SILVER_ARMOR
-        WINDOW.blit(BACKGROUND_IMAGE, (0, -2880))
+        WINDOW.blit(BACKGROUND_IMAGE[player.background], (0, -2880))
         draw_text('R', (1260, 780))
         draw_text('T', (1260, 875))
         draw_text('Y', (1485, 780))
@@ -305,9 +308,14 @@ def third_screen():
         if damage_buff_btn.draw():
             pass
         WINDOW.blit(arena_text, (35, 10))
-        draw_healthbar(player, healthbar, HEALTHBAR)
-        PLAYER_SPRITE.draw(WINDOW)
+        player_healthbar(player, healthbar, HEALTHBAR)
+        try:
+            if boss_spawned:
+                boss_healthbar(list(ENEMY_SPRITES)[0].hit_points, boss_hb, BOSS_HEALTHBAR)
+        except IndexError:
+            pass
         ENEMY_SPRITES.draw(WINDOW)
+        PLAYER_SPRITE.draw(WINDOW)
         ENEMY_SPRITES.update()
         PLAYER_SPRITE.update(pressed_buttons[-1], player_attack, border)
 
@@ -326,3 +334,4 @@ def third_screen():
     player.rect.center = (0, 290)
     player.frame = 0
     rewind(-2880, 1)
+    player.background = random.choice((0, 1))

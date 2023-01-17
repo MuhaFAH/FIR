@@ -35,9 +35,7 @@ SILVER_ARMOR = (
             pygame.image.load('assets/player-animation/silver-armor/silver-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/silver-armor/silver-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/silver-armor/silver-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/silver-armor/silver-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/silver-armor/silver-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/silver-armor/silver-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/silver-armor/silver-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/silver-armor/silver-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -86,9 +84,7 @@ SILVER_ARMOR = (
             pygame.image.load('assets/player-animation/silver-armor/gold-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/silver-armor/gold-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/silver-armor/gold-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/silver-armor/gold-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/silver-armor/gold-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/silver-armor/gold-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/silver-armor/gold-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/silver-armor/gold-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -137,9 +133,7 @@ SILVER_ARMOR = (
             pygame.image.load('assets/player-animation/silver-armor/rubin-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/silver-armor/rubin-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/silver-armor/rubin-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/silver-armor/rubin-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/silver-armor/rubin-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/silver-armor/rubin-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/silver-armor/rubin-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/silver-armor/rubin-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -188,9 +182,7 @@ SILVER_ARMOR = (
             pygame.image.load('assets/player-animation/silver-armor/emerald-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/silver-armor/emerald-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/silver-armor/emerald-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/silver-armor/emerald-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/silver-armor/emerald-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/silver-armor/emerald-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/silver-armor/emerald-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/silver-armor/emerald-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -239,9 +231,7 @@ SILVER_ARMOR = (
             pygame.image.load('assets/player-animation/silver-armor/diamond-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/silver-armor/diamond-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/silver-armor/diamond-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/silver-armor/diamond-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/silver-armor/diamond-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/silver-armor/diamond-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/silver-armor/diamond-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/silver-armor/diamond-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -294,9 +284,7 @@ GOLD_ARMOR = (
             pygame.image.load('assets/player-animation/gold-armor/silver-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/gold-armor/silver-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/gold-armor/silver-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/gold-armor/silver-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/gold-armor/silver-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/gold-armor/silver-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/gold-armor/silver-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/gold-armor/silver-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -345,9 +333,7 @@ GOLD_ARMOR = (
             pygame.image.load('assets/player-animation/gold-armor/gold-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/gold-armor/gold-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/gold-armor/gold-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/gold-armor/gold-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/gold-armor/gold-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/gold-armor/gold-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/gold-armor/gold-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/gold-armor/gold-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -396,9 +382,7 @@ GOLD_ARMOR = (
             pygame.image.load('assets/player-animation/gold-armor/rubin-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/gold-armor/rubin-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/gold-armor/rubin-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/gold-armor/rubin-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/gold-armor/rubin-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/gold-armor/rubin-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/gold-armor/rubin-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/gold-armor/rubin-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -447,9 +431,7 @@ GOLD_ARMOR = (
             pygame.image.load('assets/player-animation/gold-armor/emerald-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/gold-armor/emerald-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/gold-armor/emerald-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/gold-armor/emerald-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/gold-armor/emerald-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/gold-armor/emerald-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/gold-armor/emerald-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/gold-armor/emerald-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -498,9 +480,7 @@ GOLD_ARMOR = (
             pygame.image.load('assets/player-animation/gold-armor/diamond-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/gold-armor/diamond-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/gold-armor/diamond-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/gold-armor/diamond-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/gold-armor/diamond-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/gold-armor/diamond-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/gold-armor/diamond-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/gold-armor/diamond-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -553,9 +533,7 @@ RUBIN_ARMOR = (
             pygame.image.load('assets/player-animation/rubin-armor/silver-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/rubin-armor/silver-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/rubin-armor/silver-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/rubin-armor/silver-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/rubin-armor/silver-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/rubin-armor/silver-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/rubin-armor/silver-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/rubin-armor/silver-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -604,9 +582,7 @@ RUBIN_ARMOR = (
             pygame.image.load('assets/player-animation/rubin-armor/gold-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/rubin-armor/gold-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/rubin-armor/gold-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/rubin-armor/gold-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/rubin-armor/gold-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/rubin-armor/gold-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/rubin-armor/gold-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/rubin-armor/gold-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -655,9 +631,7 @@ RUBIN_ARMOR = (
             pygame.image.load('assets/player-animation/rubin-armor/rubin-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/rubin-armor/rubin-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/rubin-armor/rubin-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/rubin-armor/rubin-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/rubin-armor/rubin-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/rubin-armor/rubin-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/rubin-armor/rubin-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/rubin-armor/rubin-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -706,9 +680,7 @@ RUBIN_ARMOR = (
             pygame.image.load('assets/player-animation/rubin-armor/emerald-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/rubin-armor/emerald-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/rubin-armor/emerald-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/rubin-armor/emerald-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/rubin-armor/emerald-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/rubin-armor/emerald-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/rubin-armor/emerald-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/rubin-armor/emerald-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -757,9 +729,7 @@ RUBIN_ARMOR = (
             pygame.image.load('assets/player-animation/rubin-armor/diamond-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/rubin-armor/diamond-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/rubin-armor/diamond-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/rubin-armor/diamond-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/rubin-armor/diamond-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/rubin-armor/diamond-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/rubin-armor/diamond-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/rubin-armor/diamond-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -812,9 +782,7 @@ EMERALD_ARMOR = (
             pygame.image.load('assets/player-animation/emerald-armor/silver-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/emerald-armor/silver-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/emerald-armor/silver-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/emerald-armor/silver-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/emerald-armor/silver-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/emerald-armor/silver-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/emerald-armor/silver-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/emerald-armor/silver-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -863,9 +831,7 @@ EMERALD_ARMOR = (
             pygame.image.load('assets/player-animation/emerald-armor/gold-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/emerald-armor/gold-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/emerald-armor/gold-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/emerald-armor/gold-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/emerald-armor/gold-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/emerald-armor/gold-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/emerald-armor/gold-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/emerald-armor/gold-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -914,9 +880,7 @@ EMERALD_ARMOR = (
             pygame.image.load('assets/player-animation/emerald-armor/rubin-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/emerald-armor/rubin-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/emerald-armor/rubin-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/emerald-armor/rubin-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/emerald-armor/rubin-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/emerald-armor/rubin-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/emerald-armor/rubin-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/emerald-armor/rubin-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -965,9 +929,7 @@ EMERALD_ARMOR = (
             pygame.image.load('assets/player-animation/emerald-armor/emerald-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/emerald-armor/emerald-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/emerald-armor/emerald-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/emerald-armor/emerald-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/emerald-armor/emerald-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/emerald-armor/emerald-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/emerald-armor/emerald-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/emerald-armor/emerald-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -1016,9 +978,7 @@ EMERALD_ARMOR = (
             pygame.image.load('assets/player-animation/emerald-armor/diamond-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/emerald-armor/diamond-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/emerald-armor/diamond-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/emerald-armor/diamond-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/emerald-armor/diamond-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/emerald-armor/diamond-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/emerald-armor/diamond-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/emerald-armor/diamond-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -1071,9 +1031,7 @@ DIAMOND_ARMOR = (
             pygame.image.load('assets/player-animation/diamond-armor/silver-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/diamond-armor/silver-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/diamond-armor/silver-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/diamond-armor/silver-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/diamond-armor/silver-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/diamond-armor/silver-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/diamond-armor/silver-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/diamond-armor/silver-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -1122,9 +1080,7 @@ DIAMOND_ARMOR = (
             pygame.image.load('assets/player-animation/diamond-armor/gold-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/diamond-armor/gold-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/diamond-armor/gold-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/diamond-armor/gold-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/diamond-armor/gold-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/diamond-armor/gold-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/diamond-armor/gold-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/diamond-armor/gold-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -1173,9 +1129,7 @@ DIAMOND_ARMOR = (
             pygame.image.load('assets/player-animation/diamond-armor/rubin-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/diamond-armor/rubin-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/diamond-armor/rubin-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/diamond-armor/rubin-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/diamond-armor/rubin-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/diamond-armor/rubin-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/diamond-armor/rubin-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/diamond-armor/rubin-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -1224,9 +1178,7 @@ DIAMOND_ARMOR = (
             pygame.image.load('assets/player-animation/diamond-armor/emerald-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/diamond-armor/emerald-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/diamond-armor/emerald-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/diamond-armor/emerald-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/diamond-armor/emerald-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/diamond-armor/emerald-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/diamond-armor/emerald-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/diamond-armor/emerald-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -1275,9 +1227,7 @@ DIAMOND_ARMOR = (
             pygame.image.load('assets/player-animation/diamond-armor/diamond-sword/player-running-up-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/diamond-armor/diamond-sword/player-running-down-images/frame-00.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/diamond-armor/diamond-sword/player-running-down-images/frame-01.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/diamond-armor/diamond-sword/player-running-down-images/frame-02.png').convert_alpha(),
-            pygame.image.load('assets/player-animation/diamond-armor/diamond-sword/player-running-down-images/frame-03.png').convert_alpha()
+            pygame.image.load('assets/player-animation/diamond-armor/diamond-sword/player-running-down-images/frame-01.png').convert_alpha()
         ), (
             pygame.image.load('assets/player-animation/diamond-armor/diamond-sword/player-staying-images/frame-00.png').convert_alpha(),
             pygame.image.load('assets/player-animation/diamond-armor/diamond-sword/player-staying-images/frame-01.png').convert_alpha(),
@@ -1467,7 +1417,11 @@ SETTINGS_BTN_IMAGE = pygame.image.load(
 
 HEALTHBAR = pygame.image.load(
     'assets/healthbar.png'
-)
+).convert_alpha()
+
+BOSS_HEALTHBAR = pygame.image.load(
+    'assets/boss-animation/boss_hb.png'
+).convert_alpha()
 
 SKELETON_STAYING_IMAGES = cut_sheet(pygame.image.load(
     'assets/skeleton-animation/skeleton-staying-sheet.png'
@@ -1539,9 +1493,11 @@ COIN_IMAGES = cut_sheet(pygame.image.load(
     'assets/coin.png'
 ).convert_alpha(),   9,    1,    16,   16)
 
-BACKGROUND_IMAGE = pygame.image.load(
-    'assets/background-image.png'
-).convert_alpha()
+BACKGROUND_IMAGE = [
+    pygame.image.load(
+        'assets/background-image.png').convert_alpha(),
+    pygame.image.load(
+        'assets/background-image2.png').convert_alpha()]
 
 PAUSE_MENU_IMAGE = pygame.image.load(
     'assets/pause-menu.png'

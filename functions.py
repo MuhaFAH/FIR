@@ -1,19 +1,19 @@
 import sys
 import pygame
 
-from vars import CLOCK, FPS, INFO_FONT, PRICE_FONT
+from vars import CLOCK, FPS, INFO_FONT, PRICE_FONT, player
 from images import WINDOW, BACKGROUND_IMAGE, SKELETON_IMAGES, BOSS_IMAGES
 
 
 def rewind(top, coefficient=-1):
     for distance in range(1, 24, 2):
         for _ in range(5):
-            WINDOW.blit(BACKGROUND_IMAGE, (0, (top := top + distance * coefficient)))
+            WINDOW.blit(BACKGROUND_IMAGE[player.background], (0, (top := top + distance * coefficient)))
             check_closure()
 
     for distance in range(23, 0, -2):
         for _ in range(5):
-            WINDOW.blit(BACKGROUND_IMAGE, (0, (top := top + distance * coefficient)))
+            WINDOW.blit(BACKGROUND_IMAGE[player.background], (0, (top := top + distance * coefficient)))
             check_closure()
 
     return top
@@ -62,12 +62,20 @@ def get_enemy_characteristic(level, enemy='SKELETON', coefficient=1):
     ]
 
 
-def draw_healthbar(player, healthbar, image):
+def player_healthbar(player, healthbar, image):
     WINDOW.blit(image, (10, 825))
-    pygame.draw.rect(WINDOW, 'black', (100, 830, healthbar * 3, 60))
+    pygame.draw.rect(WINDOW, 'black', (100, 830, healthbar * 3, 50))
     if player.hit_points > 100:
-        pygame.draw.rect(WINDOW, 'green', (100, 830, 100 * 3, 60))
-        pygame.draw.rect(WINDOW, 'blue', (100 + 100 * 3, 830, (player.hit_points - 100) * 3, 60))
+        pygame.draw.rect(WINDOW, 'green', (100, 830, 100 * 3, 50))
+        pygame.draw.rect(WINDOW, 'blue', (100 + 100 * 3, 830, (player.hit_points - 100) * 3, 50))
     else:
-        pygame.draw.rect(WINDOW, 'green', (100, 830, player.hit_points * 3, 60))
-    pygame.draw.rect(WINDOW, 'white', (100, 830, healthbar * 3, 60), 5)
+        pygame.draw.rect(WINDOW, 'green', (100, 830, player.hit_points * 3, 50))
+    pygame.draw.rect(WINDOW, 'white', (100, 830, healthbar * 3, 50), 5)
+
+
+def boss_healthbar(boss_hp, healthbar, image):
+    WINDOW.blit(image, (10, 750))
+    pygame.draw.rect(WINDOW, 'black', (100, 760, healthbar * 0.6, 50))
+    pygame.draw.rect(WINDOW, 'purple', (100, 760, boss_hp * 0.6, 50))
+    pygame.draw.rect(WINDOW, 'white', (100, 760, healthbar * 0.6, 50), 5)
+

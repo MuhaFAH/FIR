@@ -24,7 +24,7 @@ class Player(pygame.sprite.Sprite):
         self.attack = False
         self.alive = True
         self.dead = False
-        self.armor_broken = False
+        self.background = 0
 
         self.sword = 0
         self.level = 1
