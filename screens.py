@@ -91,6 +91,7 @@ def second_screen():
         save_and_load()
 
         WINDOW.blit(BACKGROUND_IMAGE[player.background], (0, -1440))
+        WINDOW.blit(SAVE_TEXT, (650, 20))
         WINDOW.blit(sword_text, (965, 155))
         WINDOW.blit(armor_text, (885, 359))
         WINDOW.blit(buff_text, (895, 559))

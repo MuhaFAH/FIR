@@ -23,6 +23,7 @@ MAKE_NEW_ENEMY_EVENT = pygame.USEREVENT + 1
 FONT = pygame.font.Font('assets/fonts/Comic Sans MS Pixel.ttf',       80)
 INFO_FONT = pygame.font.Font('assets/fonts/Comic Sans MS Pixel.ttf',  50)
 PRICE_FONT = pygame.font.Font('assets/fonts/Comic Sans MS Pixel.ttf', 40)
+SAVE_TEXT = INFO_FONT.render(f'СОХРАНИТЬ - S  |  ЗАГРУЗИТЬ - L', True, (255, 255, 255))
 
 
 border = Border(BORDER_IMAGE,                              (810,  375))
@@ -106,10 +107,13 @@ def save_and_load():
                 for item in items:
                     with open(f'{DATA_DIR}/save{number}.dat', 'rb') as file:
                         item.purchased = pickle.load(file)
+                        item.selected = False
                     number += 1
                 with open(f'{DATA_DIR}/save{number}.dat', 'rb') as file:
                     player.money = pickle.load(file)
                 number += 1
                 with open(f'{DATA_DIR}/save{number}.dat', 'rb') as file:
                     player.level = pickle.load(file)
-                number += 1
+
+                player.armor = SILVER_ARMOR
+                player.sword = 0
