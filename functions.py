@@ -57,7 +57,7 @@ def get_enemy_characteristic(level, enemy='SKELETON', coefficient=1):
     return [
         5 * coefficient + number,
         10**coefficient + number,
-        30 * coefficient,
+        20 * coefficient,
         images,
     ]
 
@@ -75,7 +75,7 @@ def player_healthbar(player, healthbar, image):
 
 def boss_healthbar(boss_hp, healthbar, image):
     WINDOW.blit(image, (10, 750))
-    pygame.draw.rect(WINDOW, 'black', (100, 760, healthbar * 0.6, 50))
-    pygame.draw.rect(WINDOW, 'purple', (100, 760, boss_hp * 0.6, 50))
-    pygame.draw.rect(WINDOW, 'white', (100, 760, healthbar * 0.6, 50), 5)
+    pygame.draw.rect(WINDOW, 'black', (100, 760, healthbar * 2.50, 50))
+    pygame.draw.rect(WINDOW, 'purple', (100, 760, boss_hp * 2.50, 50))
+    pygame.draw.rect(WINDOW, 'white', (100, 760, healthbar * 2.50, 50), 5)
 

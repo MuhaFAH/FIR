@@ -15,7 +15,10 @@ from images import \
 
 def first_screen():
     silver_sword_btn.selected = silver_armor_btn.selected = True
+    leave_game_btn.rect.x, leave_game_btn.rect.y = 694, 550
     while not start_btn.draw():
+        if leave_game_btn.draw():
+            sys.exit()
         check_closure()
         save_and_load()
         WINDOW.blit(BACKGROUND_IMAGE[player.background], (0, 0))
@@ -23,8 +26,11 @@ def first_screen():
 
 
 def second_screen():
+    leave_game_btn.rect.x, leave_game_btn.rect.y = 1370, 10
     while not (index := (arena_btn.draw() or shop_btn.draw())):
         arena_text = PRICE_FONT.render(f'УРОВЕНЬ АРЕНЫ - {player.level}', True, (255, 255, 255))
+        if leave_game_btn.draw():
+            sys.exit()
         if silver_armor_btn.equip():
             player.armor = SILVER_ARMOR
             player.hit_points = 125
@@ -101,6 +107,7 @@ def second_screen():
 
 
 def pause_menu():
+    leave_game_btn.rect.center = (580,  590)
     while True:
         WINDOW.blit(PAUSE_MENU_IMAGE, (WINDOW.get_width() / 2 - PAUSE_MENU_IMAGE.get_width() / 2, 250))
         if continue_game_btn.draw():
@@ -143,7 +150,6 @@ def shop():
             small_coin = Coin(COIN_IMAGES, (x, y), 0, 100)
             small_coin.change_size(2)
     coin.change_size(4)
-
     while not back_btn.draw():
         if gold_armor_btn.buy(player.money):
             gold_armor_btn.purchased = True
@@ -241,7 +247,7 @@ def third_screen():
     player.attack = False
     boss_spawned = boss_dead = False
     healthbar = player.hit_points
-    boss_hb = 10**3 + 5 * player.level
+    boss_hb = 10**2 + 5 * player.level
     arena_text = FONT.render(f'УРОВЕНЬ АРЕНЫ - {player.level}', True, (255, 255, 255))
     enemies = [
         get_enemy_characteristic(player.level // 2) + [(random.randint(300, 1000), random.randint(200, 400)),
