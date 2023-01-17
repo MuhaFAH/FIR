@@ -59,8 +59,6 @@ class Player(pygame.sprite.Sprite):
         if self.hit_points <= 0 and self.alive:
             self.frame = 0
             self.alive = False
-            for enemy in ENEMY_SPRITES:
-                enemy.kill()
 
         if attack and self.alive and not self.attack:
             self.frame = 0
