@@ -71,3 +71,6 @@ The following files are also present in the project:
     vars.py - a file containing immutable variables
 
 A little game about fighting in the arena. Fight Is Right!
+
+![6](https://user-images.githubusercontent.com/118553656/218314286-587b0939-57f4-4787-b906-5e637f610aec.jpg)
+![7](https://user-images.githubusercontent.com/118553656/218314293-8f2dae1f-c02b-4cee-9d4a-5d952a9f3e0f.jpg)
